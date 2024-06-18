@@ -12,17 +12,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
 
     Vector2 moveInput;
-
     Rigidbody2D playerRigidbody2D;
     Animator animator;
-
     CapsuleCollider2D capsuleCollider2D;
+
+    float startingGravityScale;
 
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+
+        startingGravityScale = playerRigidbody2D.gravityScale;
     }
 
     void Update()
@@ -60,8 +62,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (isTouchingLadder)
         {
+            playerRigidbody2D.gravityScale = 0;
+
             Vector2 climbVelocity = new Vector2(playerRigidbody2D.velocity.x, moveInput.y * climbSpeed);
             playerRigidbody2D.velocity = climbVelocity;
+        }
+        else
+        {
+            playerRigidbody2D.gravityScale = startingGravityScale;
         }
     }
 
