@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -60,17 +56,20 @@ public class PlayerMovement : MonoBehaviour
         // check if player is touching climbing layer
         bool isTouchingLadder = capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing"));
 
-        if (isTouchingLadder)
-        {
-            playerRigidbody2D.gravityScale = 0;
-
-            Vector2 climbVelocity = new Vector2(playerRigidbody2D.velocity.x, moveInput.y * climbSpeed);
-            playerRigidbody2D.velocity = climbVelocity;
-        }
-        else
+        if (!isTouchingLadder)
         {
             playerRigidbody2D.gravityScale = startingGravityScale;
+            animator.SetBool("isClimbing", false);
+            return;
         }
+
+        playerRigidbody2D.gravityScale = 0f;
+
+        Vector2 climbVelocity = new Vector2(playerRigidbody2D.velocity.x, moveInput.y * climbSpeed);
+        playerRigidbody2D.velocity = climbVelocity;
+
+        bool playerIsClimbing = Mathf.Abs(playerRigidbody2D.velocity.y) > Mathf.Epsilon;
+        animator.SetBool("isClimbing", playerIsClimbing);
     }
 
     void OnMove(InputValue value)
