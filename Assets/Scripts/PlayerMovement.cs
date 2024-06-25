@@ -7,12 +7,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 20f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] Vector2 deathKick = new Vector2(-10f, 15f);
 
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator animator;
     CapsuleCollider2D bodyCollider2D;
     BoxCollider2D footCollider2D;
+    ParticleSystem hurtParticleSystem;
+    AudioSource audioSource;
 
     float startingGravityScale;
 
@@ -24,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         bodyCollider2D = GetComponent<CapsuleCollider2D>();
         footCollider2D = GetComponent<BoxCollider2D>();
+        hurtParticleSystem = GetComponent<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
 
         startingGravityScale = playerRigidbody2D.gravityScale;
     }
@@ -106,6 +111,20 @@ public class PlayerMovement : MonoBehaviour
         if (bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
             isAlive = false;
+            animator.SetTrigger("Dying");
+
+            // fling player
+            FlingPlayer();
+            // add particle system
+            hurtParticleSystem.Play();
+            // add hurt sound
+            audioSource.Play();
+
         }
+    }
+
+    void FlingPlayer()
+    {
+        playerRigidbody2D.velocity += deathKick;
     }
 }
