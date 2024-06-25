@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator animator;
-    CapsuleCollider2D capsuleCollider2D;
+    CapsuleCollider2D bodyCollider2D;
+    BoxCollider2D footCollider2D;
 
     float startingGravityScale;
 
@@ -18,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        bodyCollider2D = GetComponent<CapsuleCollider2D>();
+        footCollider2D = GetComponent<BoxCollider2D>();
 
         startingGravityScale = playerRigidbody2D.gravityScale;
     }
@@ -54,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     void ClimbLadder()
     {
         // check if player is touching climbing layer
-        bool isTouchingLadder = capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+        bool isTouchingLadder = bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing"));
 
         if (!isTouchingLadder)
         {
@@ -80,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
     void OnJump(InputValue value)
     {
         // check that player is touching ground layer before jump is possible
-        bool isGrounded = capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        bool isGrounded = footCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
         if (isGrounded && value.isPressed)
         {
