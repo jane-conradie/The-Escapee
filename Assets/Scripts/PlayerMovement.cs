@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     float startingGravityScale;
 
+    bool isAlive = true;
+
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -27,9 +30,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive) { return; }
+
         Run();
-        ClimbLadder();
         FlipSprite();
+        ClimbLadder();
+        Die();
     }
 
     void FlipSprite()
@@ -76,11 +82,15 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+        if (!isAlive) { return; }
+
         moveInput = value.Get<Vector2>();
     }
 
     void OnJump(InputValue value)
     {
+        if (!isAlive) { return; }
+
         // check that player is touching ground layer before jump is possible
         bool isGrounded = footCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
@@ -88,6 +98,14 @@ public class PlayerMovement : MonoBehaviour
         {
             // increase y velocity of player
             playerRigidbody2D.velocity += new Vector2(0, jumpSpeed);
+        }
+    }
+
+    void Die()
+    {
+        if (bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        {
+            isAlive = false;
         }
     }
 }
