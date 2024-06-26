@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 20f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(-10f, 15f);
+    [SerializeField] GameObject fire;
+    [SerializeField] Transform attack;
 
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
@@ -104,6 +105,13 @@ public class PlayerMovement : MonoBehaviour
             // increase y velocity of player
             playerRigidbody2D.velocity += new Vector2(0, jumpSpeed);
         }
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive) { return; }
+
+        Instantiate(fire, attack.position, transform.rotation);
     }
 
     void Die()
