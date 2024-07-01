@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             // add hurt sound
             audioSource.Play();
 
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 
