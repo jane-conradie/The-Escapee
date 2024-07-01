@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 8213494341578844389}
   m_Layer: 8
   m_Name: Damien (Player)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 141125255
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 410106001, guid: 25f0103078aef974e9faa394086efd96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -223,6 +223,8 @@ MonoBehaviour:
   jumpSpeed: 20
   climbSpeed: 5
   deathKick: {x: -10, y: 15}
+  fire: {fileID: 9027048425076534554, guid: 14e6ddf2721310143957d9ffeb82ae74, type: 3}
+  attack: {fileID: 5501305462188674705}
 --- !u!61 &5546804477759167016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255,7 +257,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06386566, y: -0.46971273}
+  m_Offset: {x: -0.06386566, y: -0.47213292}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -266,7 +268,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41080093, y: 0.06057453}
+  m_Size: {x: 0.41080093, y: 0.065414906}
   m_EdgeRadius: 0
 --- !u!198 &3868503510393934936
 ParticleSystem:
@@ -5031,7 +5033,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 141125255
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5077,7 +5079,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ede26bdf7a8bd534e81e2a92bac96c68, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5171,7 +5173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5501305462188674705}
   m_Layer: 8
-  m_Name: Gun
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
