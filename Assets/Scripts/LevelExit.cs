@@ -11,6 +11,7 @@ public class LevelExit : MonoBehaviour
         // if player collided with, then do things
         if (other.tag == "Player")
         {
+            FindObjectOfType<PlayerMovement>().SetMoveStatus(false);
             StartCoroutine(LoadNextLevel());
         }
     }
@@ -25,6 +26,8 @@ public class LevelExit : MonoBehaviour
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
             nextSceneIndex = 0;
+            // reset game session
+            FindObjectOfType<GameSession>().ResetGameSession();
         }
 
         // reset scene persist so next level can be properly populated

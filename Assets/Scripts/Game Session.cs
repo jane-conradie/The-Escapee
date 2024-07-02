@@ -59,7 +59,7 @@ public class GameSession : MonoBehaviour
         livesText.text = playerLives.ToString();
     }
 
-    void ResetGameSession()
+    public void ResetGameSession()
     {
         FindObjectOfType<ScenePersist>().ResetScenePersists();
         SceneManager.LoadScene(0);

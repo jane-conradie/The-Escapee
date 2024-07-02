@@ -362,16 +362,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 15, y: -5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -10, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -524,17 +514,17 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: f1887a7be6a438542b0438a47b864645, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 9d06811cc9600bc41a313006914ad9eb, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 1298997455, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 21300000, guid: 7e5291874dd5b8843ba276d9df800f2c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 21
+  - m_RefCount: 20
     m_Data:
       e00: 1
       e01: 0
@@ -553,7 +543,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 21
+  - m_RefCount: 20
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -756,10 +746,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779306755}
     m_Modifications:
-    - target: {fileID: 6893512900317782091, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
-      propertyPath: m_Name
-      value: Red Bob (Enemy) (4) Variant (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 977602842303301316, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.547623
@@ -799,6 +785,10 @@ PrefabInstance:
     - target: {fileID: 977602842303301316, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893512900317782091, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
+      propertyPath: m_Name
+      value: Red Bob (Enemy) (4) Variant (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1588,7 +1578,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 13
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 7
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -2004,11 +1994,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: 16, y: -5, z: 0}
+  - first: {x: 15, y: -5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 13
       m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 7
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
+  - first: {x: 16, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 7
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5402,7 +5402,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 416
+  - m_RefCount: 417
     m_Data: {fileID: 11400000, guid: 7fe07141b884c3f4a8d5ab31184e3175, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -5419,7 +5419,7 @@ Tilemap:
     m_Data: {fileID: -1682107967, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 1451063444, guid: a2e64b456d34031479478feed4dca062, type: 3}
-  - m_RefCount: 13
+  - m_RefCount: 14
     m_Data: {fileID: 291438851, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 41
     m_Data: {fileID: -321239321, guid: a2e64b456d34031479478feed4dca062, type: 3}
@@ -5429,7 +5429,7 @@ Tilemap:
     m_Data: {fileID: -1679755239, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 110885378, guid: a2e64b456d34031479478feed4dca062, type: 3}
-  - m_RefCount: 54
+  - m_RefCount: 55
     m_Data: {fileID: 32067061, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 1920517020, guid: a2e64b456d34031479478feed4dca062, type: 3}
@@ -5441,7 +5441,7 @@ Tilemap:
     m_Data: {fileID: 605737200, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -472069659, guid: a2e64b456d34031479478feed4dca062, type: 3}
-  - m_RefCount: 55
+  - m_RefCount: 54
     m_Data: {fileID: -449547137, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 23
     m_Data: {fileID: 1723070938, guid: a2e64b456d34031479478feed4dca062, type: 3}
@@ -5576,7 +5576,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 347
+  - m_RefCount: 348
     m_Data:
       e00: 1
       e01: 0
@@ -5597,7 +5597,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 4.254e-41, g: 4.254e-41, b: 4.254e-41, a: 4.254e-41}
-  - m_RefCount: 416
+  - m_RefCount: 417
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5878,9 +5878,9 @@ CompositeCollider2D:
         Y: -20161290
       - X: 209838720
         Y: -39838708
-      - X: 159838720
+      - X: 149838720
         Y: -39838708
-      - X: 159838720
+      - X: 149838720
         Y: -49838708
       - X: 140161280
         Y: -49838708
@@ -6073,8 +6073,8 @@ CompositeCollider2D:
       - {x: 17.9839, y: -2.016129}
       - {x: 20.983871, y: -2.0161583}
       - {x: 20.983843, y: -3.9838707}
-      - {x: 15.983872, y: -3.9839}
-      - {x: 15.983844, y: -4.983871}
+      - {x: 14.983872, y: -3.9839}
+      - {x: 14.983844, y: -4.983871}
       - {x: 14.016129, y: -4.983842}
       - {x: 14.016099, y: -3.9838707}
       - {x: 12.016129, y: -3.9838417}
@@ -6416,16 +6416,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 15, y: -5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -10, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -6480,7 +6470,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: f1887a7be6a438542b0438a47b864645, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -6489,7 +6479,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 1298997455, guid: a2e64b456d34031479478feed4dca062, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -6518,7 +6508,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data:
       e00: 1
       e01: 0
@@ -6663,7 +6653,7 @@ Tilemap:
       e32: 5.98e-43
       e33: 6.01e-43
   m_TileColorArray:
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -17953,10 +17943,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779306755}
     m_Modifications:
-    - target: {fileID: 6893512900317782091, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
-      propertyPath: m_Name
-      value: Red Bob (Enemy) (4) Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 977602842303301316, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.56
@@ -18001,6 +17987,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6893512900317782091, guid: 53192ed57c53302469ca3bdf0266951d, type: 3}
+      propertyPath: m_Name
+      value: Red Bob (Enemy) (4) Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18020,11 +18010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884983936712491576, guid: bb908e5ae48e7964c880334f9acfd662, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.41
+      value: -19.83
       objectReference: {fileID: 0}
     - target: {fileID: 3884983936712491576, guid: bb908e5ae48e7964c880334f9acfd662, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.41
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 3884983936712491576, guid: bb908e5ae48e7964c880334f9acfd662, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18148,6 +18138,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2165187237089787800, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165187237089787800, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.0867896
+      objectReference: {fileID: 0}
     - target: {fileID: 3959389940574953497, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
       propertyPath: m_Name
       value: Cameras
@@ -18159,6 +18157,14 @@ PrefabInstance:
     - target: {fileID: 3982508435513943191, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140206833798326843, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140206833798326843, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.0867896
       objectReference: {fileID: 0}
     - target: {fileID: 4213576608347169951, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
       propertyPath: m_BoundingShape2D
@@ -18172,6 +18178,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1279046008}
+    - target: {fileID: 6768312156022070268, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768312156022070268, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.0867896
+      objectReference: {fileID: 0}
     - target: {fileID: 7200265887827525806, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
       propertyPath: m_Follow
       value: 
@@ -18182,7 +18196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8054814101423787175, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3763416
+      value: -1.3763413
       objectReference: {fileID: 0}
     - target: {fileID: 8281349139474583186, guid: a2bc2ab09eb00894f80056e9457ebe8b, type: 3}
       propertyPath: m_Follow

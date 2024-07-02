@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     float startingGravityScale;
 
-    bool isAlive = true;
+    bool isMovementEnabled = true;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!isAlive) { return; }
+        if (!isMovementEnabled) { return; }
 
         Run();
         FlipSprite();
@@ -89,14 +89,14 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if (!isAlive) { return; }
+        if (!isMovementEnabled) { return; }
 
         moveInput = value.Get<Vector2>();
     }
 
     void OnJump(InputValue value)
     {
-        if (!isAlive) { return; }
+        if (!isMovementEnabled) { return; }
 
         // check that player is touching ground layer before jump is possible
         bool isGrounded = footCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnFire(InputValue value)
     {
-        if (!isAlive) { return; }
+        if (!isMovementEnabled) { return; }
 
         // play attack audio
         Instantiate(fire, attack.position, transform.rotation);
@@ -120,9 +120,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+        if (bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")) || footCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
-            isAlive = false;
+            isMovementEnabled = false;
             animator.SetTrigger("Dying");
 
             // fling player
@@ -131,13 +131,22 @@ public class PlayerMovement : MonoBehaviour
             hurtParticleSystem.Play();
             // add hurt sound
             audioSource.Play();
-
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 
     void FlingPlayer()
     {
         playerRigidbody2D.velocity += deathKick;
+    }
+
+    // function used in animator to trigger after die animation is finished
+    void ProcessPlayerDeath()
+    {
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
+    }
+
+    public void SetMoveStatus(bool movementEnabled)
+    {
+        isMovementEnabled = movementEnabled;
     }
 }
