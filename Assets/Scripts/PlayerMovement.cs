@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 deathKick = new Vector2(-10f, 15f);
     [SerializeField] GameObject fire;
     [SerializeField] Transform attack;
+    [SerializeField] AudioSource jumpSFX;
 
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
@@ -102,6 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && value.isPressed)
         {
+            // play jump SFX
+            jumpSFX.Play();
             // increase y velocity of player
             playerRigidbody2D.velocity += new Vector2(0, jumpSpeed);
         }
@@ -111,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isAlive) { return; }
 
+        // play attack audio
         Instantiate(fire, attack.position, transform.rotation);
     }
 

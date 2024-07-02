@@ -4,8 +4,7 @@ using UnityEngine;
 public class CoinPickup : MonoBehaviour
 {
     [SerializeField] AudioClip coinPickupSFX;
-    [SerializeField] int pointsForGoldCoinPickup = 100;
-    [SerializeField] int pointsForBronzeCoinPickup = 50;
+    [SerializeField] int pointsForCoinPickup = 100;
 
     bool wasCollected = false;
 
@@ -30,17 +29,7 @@ public class CoinPickup : MonoBehaviour
     void CalculateAndAddScore()
     {
         int scoreToAdd = 0;
-
-        if (gameObject.tag == "Coin - Gold")
-        {
-            // 100 points
-            scoreToAdd += pointsForGoldCoinPickup;
-        }
-        else if (gameObject.tag == "Coin - Bronze")
-        {
-            // 50 points
-            scoreToAdd += pointsForBronzeCoinPickup;
-        }
+        scoreToAdd += pointsForCoinPickup;
 
         // send to UI
         FindObjectOfType<GameSession>().ProcessScoreIncrease(scoreToAdd);

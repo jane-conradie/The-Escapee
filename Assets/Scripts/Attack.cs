@@ -3,6 +3,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] AudioSource attackSFX;
 
     Animator animator;
     Rigidbody2D attackRigidBody2D;
@@ -19,6 +20,7 @@ public class Attack : MonoBehaviour
 
         // set animator to firing since that is the state on instatiation
         animator.Play("Firing");
+        attackSFX.Play();
     }
 
     void Update()
