@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Coin - Gold
+  - Coin - Bronze
   layers:
   - Default
   - TransparentFX
